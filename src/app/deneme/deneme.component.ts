@@ -13,9 +13,13 @@ export class DenemeComponent implements OnInit {
   ngOnInit() {
   }
 
-  writeToConsole():void{
+  numberCountUp():void{
     this.count++;
     console.log(this.count);
+  }
+
+  numberCountDown():void{
+    this.count--;
   }
 
 }

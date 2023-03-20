@@ -14,8 +14,15 @@
   <body>
         <div class="container">
           <div class="row">
-            <button type="button" class="btn btn-outline-primary" (click)="writeToConsole()">Sayıyı Arttır</button>
-            <h2>Sayı: {{count}}</h2>
+            <div class="col-sm-4">
+              <button type="button" class="btn btn-outline-primary" (click)="numberCountUp()">Sayıyı Arttır</button>
+            </div>
+            <div class="col-sm-4">
+              <strong>Sayı: {{count}}</strong>
+            </div>
+            <div class="col-sm-4">
+              <button type="button" class="btn btn-outline-danger" (click)="numberCountDown()">Sayıyı Azalt</button>
+            </div>
           </div>
         </div>
   </body>
