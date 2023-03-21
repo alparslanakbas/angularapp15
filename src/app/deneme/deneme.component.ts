@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../Model/User';
 
 @Component({
   selector: 'app-deneme',
@@ -8,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class DenemeComponent implements OnInit {
 
   count:number=1;
-  constructor() { }
+  names:string[]=["Alparslan","Akbaş"];
+  userList:User[]=[];
+  isShow=true;
+  constructor() {
+    this.userList.push(new User(1,"Alparslan","alparslan@gmail.com")) // Belirtilen dataları çek.
+    this.userList.push(new User(2,"Ahmet","ahmet@gmail.com"))
+    this.userList.push(new User(3,"Mehmet","mehmet@gmail.com"))
+   }
 
   ngOnInit() {
   }
@@ -21,5 +29,14 @@ export class DenemeComponent implements OnInit {
   numberCountDown():void{
     this.count--;
   }
+
+  showDenemeClose():void{
+    this.isShow=false;
+  }
+
+  showDenemeOpen():void{
+    this.isShow=true;
+  }
+
 
 }

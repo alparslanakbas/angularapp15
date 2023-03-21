@@ -24,6 +24,29 @@
               <button type="button" class="btn btn-outline-danger" (click)="numberCountDown()">Sayıyı Azalt</button>
             </div>
           </div>
+          <hr>
+          <div *ngFor="let name of names">{{name}}</div>
+          <hr>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Ad</th>
+                <th>Mail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of userList">
+                <td scope="row">{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr>
+          <div *ngIf="isShow">Bu deneme yazısıdır.</div>
+          <button class="btn btn-danger" (click)="showDenemeClose()">Yazıyı Kapat</button>
+          <button class="btn btn-success" (click)="showDenemeOpen()">Yazıyı Aç</button>
         </div>
   </body>
 </html>
