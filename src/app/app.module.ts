@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { PipePipe } from './Pipes/pipe.pipe';
+import { NgModule, Pipe } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,7 +13,8 @@ import { FooterComponent } from './Footer/Footer.component';
     AppComponent,
     DenemeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PipePipe
    ],
   imports: [
     BrowserModule,

@@ -47,6 +47,10 @@
           <div *ngIf="isShow">Bu deneme yazısıdır.</div>
           <button class="btn btn-danger" (click)="showDenemeClose()">Yazıyı Kapat</button>
           <button class="btn btn-success" (click)="showDenemeOpen()">Yazıyı Aç</button>
+          <hr>
+          <div class="col-sm-6">
+              <p>{{person1.firstName | lower}}</p>
+          </div>
         </div>
   </body>
 </html>

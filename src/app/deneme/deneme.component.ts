@@ -12,6 +12,7 @@ export class DenemeComponent implements OnInit {
   names:string[]=["Alparslan","Akbaş"];
   userList:User[]=[];
   isShow=true;
+  person1:Person={firstName:"Alparslan", lastName:"Akbaş",age:24}
   constructor() {
     this.userList.push(new User(1,"Alparslan","alparslan@gmail.com")) // Belirtilen dataları çek.
     this.userList.push(new User(2,"Ahmet","ahmet@gmail.com"))
@@ -37,6 +38,11 @@ export class DenemeComponent implements OnInit {
   showDenemeOpen():void{
     this.isShow=true;
   }
+}
 
-
+interface Person
+{
+  firstName:string,
+  lastName:string,
+  age:number
 }
