@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { from } from 'rxjs';
 import { User } from '../Model/User';
 
@@ -16,16 +16,23 @@ export class DenemeComponent implements OnInit {
   isShow=true;
   person1:Person={firstName:"Alparslan", lastName:"Akbaş",age:24}
 
-  loginModel:loginModel;
-  constructor() {
+  loginModel:loginModel; // Template Form
+  loginForm:FormGroup; // Reactive Form
+  constructor(fb:FormBuilder) {
     this.userList.push(new User(1,"Alparslan","alparslan@gmail.com")) // Belirtilen dataları çek.
     this.userList.push(new User(2,"Ahmet","ahmet@gmail.com"))
     this.userList.push(new User(3,"Mehmet","mehmet@gmail.com"))
 
     this.loginModel={userName:"",password:"",rememberMe:false}
+
+    this.loginForm= fb.group({
+      userName:fb.control('',Validators.required),
+      password:fb.control('',[Validators.required,Validators.minLength(6)])
+    })
    }
 
   ngOnInit() {
+
   }
 
   numberCountUp():void{
@@ -40,13 +47,17 @@ export class DenemeComponent implements OnInit {
   showDenemeClose():void{
     this.isShow=false;
   }
-
+  
   showDenemeOpen():void{
     this.isShow=true;
   }
 
   save(form:NgForm){
     console.log(form.value)
+  }
+
+  saveReactive(){
+    console.log(this.loginForm.value)
   }
 }
 
