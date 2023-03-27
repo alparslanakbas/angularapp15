@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DenemeComponent } from './deneme/deneme.component';
 import { HeaderComponent } from './Header/Header.component';
 import { FooterComponent } from './Footer/Footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './Footer/Footer.component';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
