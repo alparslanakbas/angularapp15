@@ -1,1 +1,47 @@
-<p>Hakkımızda works!</p>
+<p>HTTP Servisleri / RestFull API</p>
+<hr>
+
+<h3>GET Servisi</h3>
+<p>Gelen Örnek Data</p>
+<hr>
+<p>Id : {{user?.id}}</p>
+<p>Başlık : {{user?.title}}</p>
+<p>Kullanıcı Id : {{user?.userId}}</p>
+<p>Online : {{user?.completed}}</p>
+
+<p>Gelen Örnek Data Listesi</p>
+
+<div class="d-flex align-items-center justify-content-center" style="height: 25vh;" *ngIf="isLoadingShow">
+  <button class="btn btn-primary" type="button" disabled>
+    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+    Datalar Listeleniyor...
+  </button>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Başlık</th>
+      <th scope="col">Açıklama</th>
+      <th scope="col">Kullanıcı Id</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let user of getAllList ">
+    <tr>
+      <th scope="row">{{user.id}}</th>
+      <td>{{user.title}}</td>
+      <td>{{user.body}}</td>
+      <td>{{user.userId}}</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<div class="alert alert-danger d-flex align-items-center" role="alert" *ngIf="user==undefined">
+  <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+  <div>
+    Aradığınız Data Bulunamamıştır.!
+  </div>
+</div>
+<h4>Id'ye göre Data Getirme</h4>
+<p>3 Id Title Datası : {{user?.title}}</p>

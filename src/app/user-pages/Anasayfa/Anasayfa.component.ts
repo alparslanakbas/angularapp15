@@ -31,5 +31,4 @@ export class AnasayfaComponent implements OnInit {
       console.log(x);
     })
   }
-
 }

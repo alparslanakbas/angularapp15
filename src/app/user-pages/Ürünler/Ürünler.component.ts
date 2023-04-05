@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-Ürünler',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./Ürünler.component.css']
 })
 export class ÜrünlerComponent implements OnInit {
+
+  
 
   constructor() { }
 
